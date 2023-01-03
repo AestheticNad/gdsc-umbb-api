@@ -21,36 +21,19 @@ const Member = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
+      unique:true
     },
     departement: {
       type: String,
       required: true,
-      trim: true,
+      enum:["Design","Development","Design","Multimedia","Marketing & Logistics"]
     },
-    isLead: {
-      type: Boolean,
-      default: false,
-    },
-    isCoLead: {
-      type: Boolean,
-      default: false,
-    },
-    isHumanResourcesTeam: {
-      type: Boolean,
-      default: false,
-    },
-    isProjectManager: {
-      type: Boolean,
-      default: false,
-    },
-    isDepartementManager: {
-      type: Boolean,
-      default: false,
-    },
-    isSectionChief: {
-      type: Boolean,
-      default: false,
-    },
+   role:{
+    type:String,
+    required:true,
+    default:"member",
+    enum:["member","lead","coLead","humanResources","projectManager","departementManager","sectionChief"]
+   }
   },
   { timestamps: true }
 );
