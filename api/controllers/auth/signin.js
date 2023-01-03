@@ -8,11 +8,10 @@ const Signin = async (req, res) => {
       email: data.email,
       hashedPassword: hash(data.password),
     });
-    res.send(user? {user} : {error:"Invalid credentials"} );
+    res.send(user ? { user } : { error: "Invalid credentials" });
   } catch (error) {
-    res.send({error});
+    res.send({ error });
   }
 };
 
 module.exports = Signin;
-
