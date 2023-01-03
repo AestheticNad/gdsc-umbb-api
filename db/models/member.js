@@ -10,7 +10,7 @@ const Member = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      unique:true
+      unique: true,
     },
     hashedPassword: {
       type: String,
@@ -21,19 +21,33 @@ const Member = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      unique:true
+      unique: true,
     },
     departement: {
       type: String,
       required: true,
-      enum:["Design","Development","Design","Multimedia","Marketing & Logistics"]
+      enum: [
+        "Design",
+        "Development",
+        "Design",
+        "Multimedia",
+        "Marketing & Logistics",
+      ],
     },
-   role:{
-    type:String,
-    required:true,
-    default:"member",
-    enum:["member","lead","coLead","humanResources","projectManager","departementManager","sectionChief"]
-   }
+    role: {
+      type: String,
+      required: true,
+      default: "member",
+      enum: [
+        "member",
+        "lead",
+        "coLead",
+        "humanResources",
+        "projectManager",
+        "departementManager",
+        "sectionChief",
+      ],
+    },
   },
   { timestamps: true }
 );
