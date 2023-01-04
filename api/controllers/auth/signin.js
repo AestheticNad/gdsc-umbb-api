@@ -1,6 +1,5 @@
 const Member = require("../../../db/models/build/member");
-const hash = (password) =>
-  require("crypto").createHash("sha256").update(password).digest("hex");
+const hash = require("../util/hash");
 const Signin = async (req, res) => {
   let data = req.body;
   try {

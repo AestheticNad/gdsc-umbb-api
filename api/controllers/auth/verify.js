@@ -9,7 +9,7 @@ const VerifyMember = async (req, res) => {
     if (Date.now() - token.expires > 3600000)
       return res.send({ error: "Key Expired Login to get a new one" });
     await Member.findOneAndUpdate({ _id: token.uid }, { isVerified: true });
-    await VerificationToken.findOneAndDelete({key})
+    await VerificationToken.findOneAndDelete({ key });
     res.send({ success: "true" });
   } catch (error) {
     console.log(error);
