@@ -17,6 +17,12 @@ const Member = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    phoneNumber: {
+      type: String,
+      required: true,
+      trim: true,
+      unique: true,
+    },
     discordTag: {
       type: String,
       required: true,
@@ -33,6 +39,10 @@ const Member = new mongoose.Schema(
         "Multimedia",
         "Marketing & Logistics",
       ],
+    },
+    isVerified: {
+      type: Boolean,
+      default: false,
     },
     role: {
       type: String,

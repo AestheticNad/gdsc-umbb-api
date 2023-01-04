@@ -1,4 +1,4 @@
-const Member = require("../../../db/models/member");
+const Member = require("../../../db/models/build/member");
 const hash = (password) =>
   require("crypto").createHash("sha256").update(password).digest("hex");
 const Signin = async (req, res) => {
