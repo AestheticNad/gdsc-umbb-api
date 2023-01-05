@@ -10,6 +10,6 @@ router.route("/signup").post(checkBody, Signup);
 router.route("/signin").post(checkBody, Signin);
 router.route("/verify/:key").get(VerifyMember);
 router.route("/reset").post(SendResetToken);
-router.route("/reset/:key").post(ResetMember);
+router.route("/reset/:key").post(checkBody, ResetMember);
 
 module.exports = router;

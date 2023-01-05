@@ -35,7 +35,7 @@ const ResetMember = async (req, res) => {
     if (Date.now() - token.expires > 3600000)
       return res.send({ error: "Key Expired , Request a new one" });
     await Member.findOneAndUpdate(
-      { id: token.uid },
+      { _id: token.uid },
       { hashedPassword: password }
     );
     await ResetToken.findOneAndDelete({ key });
